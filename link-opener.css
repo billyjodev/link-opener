@@ -186,7 +186,7 @@ textarea {
   height: 140px;
   padding: 16px 18px;
   background: var(--bg-secondary);
-  border: 2px solid var(--border-medium);
+  border: 1px solid var(--border-medium);
   border-radius: var(--radius-md);
   font-family: 'JetBrains Mono', monospace;
   font-size: 13px;
@@ -204,13 +204,12 @@ textarea::placeholder {
 textarea:focus {
   border-color: var(--accent-primary);
   background: var(--bg-primary);
-  box-shadow: 0 0 0 4px var(--accent-glow);
 }
 
 /* Link List */
 .link-list {
   margin: 24px 0;
-  max-height: 340px;
+  max-height: 400px;
   overflow-y: auto;
   border-radius: var(--radius-md);
   background: var(--bg-secondary);
@@ -237,10 +236,10 @@ textarea:focus {
 
 .link-item {
   display: flex;
-  align-items: flex-start;
-  padding: 14px 18px;
+  align-items: center;
+  padding: 10px 14px;
   border-bottom: 1px solid var(--border-subtle);
-  gap: 14px;
+  gap: 10px;
   transition: background 0.15s ease;
   animation: itemEnter 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
@@ -272,22 +271,17 @@ textarea:focus {
 }
 
 .link-item input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   accent-color: var(--accent-primary);
   cursor: pointer;
   flex-shrink: 0;
-  margin-top: 2px;
-  border-radius: 4px;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  border-radius: 3px;
+  transition: transform 0.15s ease;
 }
 
 .link-item input[type="checkbox"]:hover {
-  transform: scale(1.08);
-}
-
-.link-item input[type="checkbox"]:checked {
-  box-shadow: 0 0 0 3px var(--accent-light);
+  transform: scale(1.1);
 }
 
 .link-item label {
@@ -295,26 +289,31 @@ textarea:focus {
   cursor: pointer;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  align-items: baseline;
+  gap: 8px;
 }
 
 .link-text {
   font-weight: 500;
   color: var(--text-primary);
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.4;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  flex-shrink: 1;
+  min-width: 0;
 }
 
 .link-url {
   color: var(--text-muted);
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
-  word-break: break-all;
-  line-height: 1.5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 999;
+  min-width: 0;
 }
 
 .link-item:hover .link-url {
