@@ -1,0 +1,7 @@
+# Robots.txt for Link Opener
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://billyjodev.github.io/link-opener/sitemap.xml
